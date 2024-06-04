@@ -2,6 +2,10 @@
 @use '../mixins' as *;
 @use '../functions' as *;
 
+.section__columns {
+    padding: rem(160) 0;
+}
+
 .section-columns__container {
     display: flex;
     flex-direction: row;

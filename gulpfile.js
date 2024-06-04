@@ -120,8 +120,8 @@ function clean() {
 function svg() {
   return gulp
     .src("src/assets/images/icons/*.svg")
-    .pipe(svgSprite({ mode: { symbol: { sprite: "../sprite.svg" } } }))
-    .pipe(gulp.dest("src/assets/images/icons/"));
+    .pipe(svgSprite({ mode: { stack: { sprite: "../sprite.svg" } } }))
+    .pipe(gulp.dest("src/assets/images"));
 }
 
 export { svg };

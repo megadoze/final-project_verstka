@@ -1,0 +1,89 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+@use '../functions' as *;
+
+$service-item-icon-size: rem(80);
+$service-item-link-icon-size: rem(48);
+
+.service-item {
+    padding: rem(48);
+
+    &--icon-design &__title::after {
+        background-image: url('../../assets/images/sprite.svg#icon-design');
+    }
+
+    &--icon-development &__title::after {
+        background-image: url('../../assets/images/sprite.svg#icon-development');
+    }
+}
+
+.service-item__title {
+    display: flex;
+    align-items: center;
+    gap: rem(24);
+    color: var(--section-title-color);
+    font-size: rem(24);
+    font-weight: 700;
+    line-height: 1.33;
+    margin-bottom: rem(30);
+    position: relative;
+
+    &::before {
+        content: '';
+        width: $service-item-icon-size;
+        height: $service-item-icon-size;
+        background-color: $color-primary;
+        border-radius: 50%;
+    }
+
+    &::after {
+        content: '';
+        width: calc($service-item-icon-size / 2.5);
+        height: calc($service-item-icon-size / 2.5);
+        position: absolute;
+        top: calc($service-item-icon-size / 2);
+        left: calc($service-item-icon-size / 2);
+        transform: translate(-50%, -50%);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+}
+
+.service-item__desc {
+    line-height: 2;
+    margin: 0 0 rem(30);
+}
+
+.service-item__link {
+    display: inline-flex;
+    align-items: center;
+    gap: rem(16);
+    color: var(--section-title-color);
+    font-size: rem(16);
+    line-height: 2;
+    position: relative;
+
+    &::before {
+        content: '';
+        width: $service-item-link-icon-size;
+        height: $service-item-link-icon-size;
+        background-color: #fff;
+        border-radius: 50%;
+        box-shadow: 0px 3px 5px 0px rgba($color-primary, .25);
+    }
+
+    &::after {
+        content: '';
+        width: calc($service-item-link-icon-size / 4);
+        height: calc($service-item-link-icon-size / 4);
+        position: absolute;
+        top: calc($service-item-link-icon-size / 2);
+        left: calc($service-item-link-icon-size / 2);
+        transform: translate(-50%, -50%);
+        background-image: url('../../assets/images/sprite.svg#icon-plus');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+}
