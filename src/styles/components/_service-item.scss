@@ -13,7 +13,7 @@ $service-item-link-icon-size: rem(48);
     }
 
     &--icon-development &__title::after {
-        background-image: url('../../assets/images/sprite.svg#icon-development');
+        background-image: url('assets/images/sprite.svg#icon-development');
     }
 }
 
@@ -81,7 +81,7 @@ $service-item-link-icon-size: rem(48);
         top: calc($service-item-link-icon-size / 2);
         left: calc($service-item-link-icon-size / 2);
         transform: translate(-50%, -50%);
-        background-image: url('../../assets/images/sprite.svg#icon-plus');
+        background-image: url('assets/images/sprite.svg#icon-plus');
         background-position: center;
         background-repeat: no-repeat;
         background-size: contain;
