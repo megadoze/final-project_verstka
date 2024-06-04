@@ -114,6 +114,8 @@ function clean() {
   return deleteAsync(["dist/**"]);
 }
 
+//
+
 function svg() {
   return gulp
     .src("src/assets/images/icons/*.svg")
