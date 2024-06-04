@@ -1,0 +1,20 @@
+@use '../variables' as *;
+@use '../functions' as *;
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    color: inherit;
+    gap: rem(17);
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.logo__title {
+    margin: 0;
+    font-size: rem(24);
+    line-height: 1.33;
+    font-weight: 700;
+}

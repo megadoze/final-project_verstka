@@ -1,0 +1,37 @@
+@use "sass:map";
+@use 'variables' as *;
+
+@mixin font-face($font-name, $file-path, $weight: 400, $style: normal) {
+    @font-face {
+        font-family: $font-name;
+        src:
+            local($font-name),
+            url($file-path + '.ttf') format("truetype-variable");
+        font-weight: $weight;
+        font-style: $style;
+    }
+}
+
+@mixin list-reset {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+@mixin lg {
+    @media screen and (max-width: map.get($breakpoints, 'lg')) {
+        @content;
+    }
+}
+
+@mixin md {
+    @media screen and (max-width: map.get($breakpoints, 'md')) {
+        @content;
+    }
+}
+
+@mixin sm {
+    @media screen and (max-width: map.get($breakpoints, 'sm')) {
+        @content;
+    }
+}

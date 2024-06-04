@@ -1,0 +1,44 @@
+@use '../variables' as *;
+@use '../functions' as *;
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: rem(15) rem(35);
+    border: none;
+    border-radius: rem(6);
+    color: #fff;
+    font-size: rem(14);
+    font-weight: 900;
+    line-height: normal;
+    text-transform: uppercase;
+
+    &:hover,
+    &:active {
+        text-decoration: none;
+    }
+}
+
+.button--outline {
+    color: $color-text-white;
+    border: 1px solid rgba(255, 255, 255, 0.30);
+    background-color: transparent;
+
+    &:hover,
+    &:active {
+        background-color: rgba(255, 255, 255, 0.05);
+        ;
+    }
+}
+
+.button--primary {
+    color: $color-text-white;
+    background-color: $color-primary;
+
+    &:hover,
+    &:active {
+        background-color: darken($color-primary, 5%);
+        ;
+    }
+}
