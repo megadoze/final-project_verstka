@@ -106,7 +106,7 @@ function copy() {
         encoding: "binary",
       }
     )
-    .pipe(gulp.dest("dist"), { encoding: "binary" })
+    .pipe(gulp.dest("dist", { encoding: "binary" }))
     .pipe(browserSync.stream({ once: true }));
 }
 
