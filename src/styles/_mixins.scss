@@ -1,13 +1,13 @@
 @use "sass:map";
 @use 'variables' as *;
 
-@mixin font-face($font-name, $file-path, $weight: 400, $style: normal) {
+@mixin font-face($font-name, $file-path, $style: normal) {
     @font-face {
         font-family: $font-name;
         src:
             local($font-name),
             url($file-path + '.ttf') format("truetype-variable");
-        font-weight: $weight;
+        font-weight: 100 900;
         font-style: $style;
     }
 }

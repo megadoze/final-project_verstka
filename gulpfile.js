@@ -21,18 +21,18 @@ function server() {
 }
 
 function watch() {
-  gulp.watch(["src/style.scss", "src/styles/**/*"], styles);
-  gulp.watch(["src/assets/images/icons/*"], svg);
-  gulp.watch(["src/app.js"], scripts);
-  gulp.watch(["src/index.html"], html);
   gulp.watch(
     [
       "src/assets/fonts/*",
       "src/assets/images/**/*",
-      "src/assets/images/!(icons)/*",
+      "!src/assets/images/!(icons)/*",
     ],
     copy
   );
+  gulp.watch(["src/style.scss", "src/styles/**/*"], styles);
+  gulp.watch(["src/assets/images/icons/*"], svg);
+  gulp.watch(["src/*.js"], scripts);
+  gulp.watch(["src/*.html"], html);
 }
 
 function html() {
@@ -57,7 +57,7 @@ function scripts() {
         module: {
           rules: [
             {
-              test: /\.(?:js)$/,
+              test: /\.m?js$/,
               exclude: /node_modules/,
               use: {
                 loader: "babel-loader",
@@ -100,16 +100,13 @@ function copy() {
         "src/assets/fonts/*",
         "src/assets/images/!(icons)/**/*",
         "src/assets/images/!(icons)",
-        "src/favicon.ico",
-        "src/apple-touch-icon.png",
-        "src/favicon-16x16.*",
-        "src/favicon.*",
       ],
       {
         base: "src",
+        encoding: "binary",
       }
     )
-    .pipe(gulp.dest("dist"))
+    .pipe(gulp.dest("dist"), { encoding: "binary" })
     .pipe(browserSync.stream({ once: true }));
 }
 
@@ -128,10 +125,10 @@ export { svg };
 
 export { styles, clean, copy, scripts, html, server, watch };
 
-export let build = gulp.series(clean, copy, styles, scripts, html);
+export let build = gulp.series(clean, html, styles, scripts, copy);
 
 export default gulp.series(
   clean,
-  parallel(copy, styles, scripts, html),
+  parallel(html, styles, scripts, copy),
   parallel(server, watch)
 );
