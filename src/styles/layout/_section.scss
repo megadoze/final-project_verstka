@@ -48,11 +48,34 @@
         margin: 0 auto;
         text-align: center;
 
-
         @include md {
             max-width: rem(314);
         }
     }
+
+    &--flex {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+
+        .section__info {
+            margin-bottom: rem(-12);
+        }
+
+        .section__title {
+            margin-bottom: 0;
+
+            @include sm {
+                margin-bottom: rem(32);
+            }
+        }
+
+        @include sm {
+            display: block;
+        }
+    }
+
+
 }
 
 .section__label {
