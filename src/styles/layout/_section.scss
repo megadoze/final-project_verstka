@@ -11,6 +11,7 @@
     background-color: var(--section-bg);
     color: var(--section-color);
     padding: rem(100) 0;
+    position: relative;
 
     &--dark {
         --section-bg: #{$bg-dark};
@@ -21,6 +22,18 @@
     @include sm {
         padding: rem(34) 0 rem(50);
     }
+}
+
+.section:not(.section--dark)+.section:not(.section--dark)::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: rem(1);
+    width: calc(100% - #{$gutter}*2);
+    max-width: calc(1210px - #{$gutter}*2);
+    background-color: $border-color;
 }
 
 .section__header {
@@ -77,6 +90,17 @@
             font-size: rem(40);
         }
     }
+
+    &--h3 {
+        font-size: rem(40);
+        line-height: 1.2;
+        margin: 0 0 rem(28);
+
+        @include md {
+            margin-bottom: rem(16);
+        }
+    }
+
 }
 
 .section__desc {

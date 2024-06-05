@@ -1,5 +1,7 @@
 // Ждем пока закрузится вся страница
 document.addEventListener("DOMContentLoaded", () => {
+  // Menu
+
   // Найти кнопку на странице
   const button = document.querySelector(".js-menu-toggle");
 
@@ -15,3 +17,15 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 });
+
+// Video
+const videoButton = document.querySelector(".js-video-play");
+videoButton.onclick = function () {
+  const video = videoButton.parentElement;
+  const videoIframe = document.querySelector("iframe");
+  videoIframe.contentWindow.postMessage(
+    JSON.stringify({ event: "command", func: "playVideo" }),
+    "*"
+  );
+  video.classList.add("is-active");
+};

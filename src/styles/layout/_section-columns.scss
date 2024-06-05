@@ -4,6 +4,18 @@
 
 .section__columns {
     padding: rem(160) 0;
+
+    @include sm {
+        padding: rem(34) 0 rem(50);
+    }
+
+    &--small {
+        padding: rem(130) 0 rem(150);
+
+        @include sm {
+            padding: rem(34) 0 rem(50);
+        }
+    }
 }
 
 .section-columns__container {
@@ -34,6 +46,7 @@
     }
 
     &--media {
+        display: flex;
         flex-basis: 48.7%;
         background-repeat: no-repeat;
         background-position: center;

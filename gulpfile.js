@@ -31,7 +31,7 @@ function watch() {
   );
   gulp.watch(["src/style.scss", "src/styles/**/*"], styles);
   gulp.watch(["src/assets/images/icons/*"], svg);
-  gulp.watch(["src/*.js"], scripts);
+  gulp.watch(["src/app.js"], scripts);
   gulp.watch(["src/*.html"], html);
 }
 
