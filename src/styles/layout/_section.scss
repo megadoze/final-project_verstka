@@ -123,12 +123,22 @@
             margin-bottom: rem(16);
         }
     }
+}
 
+.section__lead {
+    margin: 0 0 rem(18);
+    color: var(--section-title-color);
+    font-size: rem(20);
+    line-height: 1.6;
 }
 
 .section__desc {
     line-height: 2;
     margin: 0 0 rem(34);
+}
+
+.section__partial {
+    margin-top: rem(120);
 }
 
 .section__footer {

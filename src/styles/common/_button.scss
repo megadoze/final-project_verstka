@@ -13,6 +13,7 @@
     font-weight: 900;
     line-height: normal;
     text-transform: uppercase;
+    transition: background-color .3s ease, opasity .3s ease;
 
     &:hover,
     &:active {
@@ -40,5 +41,16 @@
     &:active {
         background-color: darken($color-primary, 5%);
         ;
+    }
+}
+
+.button--white {
+    color: $color-text-dark;
+    background-color: #fff;
+    box-shadow: 0 3px 9px 0 rgba(57, 20, 0, 0.08);
+
+    &:hover,
+    &:active {
+        opacity: .7;
     }
 }
