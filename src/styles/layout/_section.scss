@@ -150,6 +150,10 @@
 
 .section__partial {
     margin-top: rem(120);
+
+    @include sm {
+        margin-top: rem(80);
+    }
 }
 
 .section__footer {
