@@ -14,6 +14,7 @@
     line-height: normal;
     text-transform: uppercase;
     transition: background-color .3s ease, opasity .3s ease;
+    white-space: nowrap;
 
     &:hover,
     &:active {

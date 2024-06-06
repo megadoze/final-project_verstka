@@ -123,6 +123,17 @@
             margin-bottom: rem(16);
         }
     }
+
+    &--h4 {
+        font-size: rem(24);
+        font-weight: 700;
+        line-height: 1.33;
+        margin: 0 0 rem(22);
+
+        @include md {
+            margin-bottom: rem(16);
+        }
+    }
 }
 
 .section__lead {
