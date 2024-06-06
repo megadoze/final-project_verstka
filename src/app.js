@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
     modules: [Pagination, A11y],
     loop: true,
     speed: 600,
-    // autoHeight: true,
+    autoHeight: true,
     spaceBetween: 20,
     slidesPerView: 1,
     a11y: true,
