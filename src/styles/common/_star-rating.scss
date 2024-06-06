@@ -13,9 +13,9 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    background-image: url('../../assets/images/sprite.svg#icon-star-unchecked');
+    background-image: url('assets/images/sprite.svg#icon-star-unchecked');
 
     &--checked {
-        background-image: url('../../assets/images/sprite.svg#icon-star-checked');
+        background-image: url('assets/images/sprite.svg#icon-star-checked');
     }
 }
