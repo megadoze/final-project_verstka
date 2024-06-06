@@ -1,0 +1,46 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+@use '../functions' as *;
+
+$checklist-icon-size: rem(32);
+
+.checklist {
+    @include list-reset;
+
+    margin-top: rem(36);
+}
+
+.checklist__item {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: rem(16);
+
+
+    &::before {
+        content: '';
+        width: $checklist-icon-size;
+        height: $checklist-icon-size;
+        background-color: $color-primary;
+        border-radius: 50%;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        width: calc($checklist-icon-size / 2);
+        height: calc($checklist-icon-size / 2);
+        top: calc($checklist-icon-size / 2);
+        left: calc($checklist-icon-size / 2);
+        transform: translate(-50%, -50%);
+        background-image: url('assets/images/sprite.svg#icon-check');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    &:not(:last-child) {
+        margin-bottom: rem(16);
+    }
+
+}
