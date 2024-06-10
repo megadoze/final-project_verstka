@@ -1,0 +1,36 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+@use '../functions' as *;
+
+.form-control {
+    padding: rem(8) rem(16);
+    color: $color-text-dark;
+    border: 1px solid #F3D1BF;
+    background-color: #fff;
+    border-radius: rem(6);
+    font-family: inherit;
+    line-height: 2;
+    outline: none;
+
+    &::placeholder {
+        color: $color-text-gray;
+    }
+
+    &--textarea {
+        resize: none;
+        min-height: rem(128);
+    }
+
+    &--select {
+        $icon-height: rem(7);
+        $icon-width: rem(12);
+        $padding-x: rem(16);
+
+        appearance: none;
+        padding-right: calc($padding-x * 2 + $icon-width);
+        background-repeat: no-repeat;
+        background-image: linear-gradient(45deg, transperent 50%, $color-primary 50%), linear-gradient(135deg, $color-primary 50%, transperent 50%);
+        background-size: calc($icon-width / 2) $icon-height, calc($icon-width / 2) $icon-height;
+        background-position: calc(100% - ($padding-x + $icon-width / 2)) 50%, calc(100% - $padding-x) 50%, 100% 0;
+    }
+}
