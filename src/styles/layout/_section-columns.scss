@@ -28,6 +28,14 @@
         flex-direction: column;
         gap: rem(30);
     }
+
+    &--reverse {
+        flex-direction: row-reverse;
+
+        @include sm {
+            flex-direction: column-reverse;
+        }
+    }
 }
 
 .section-columns__item {

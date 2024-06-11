@@ -1,0 +1,56 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+@use '../functions' as *;
+
+$contact-icon-size: rem(48);
+
+.contact-list {
+    font-size: rem(20);
+    font-style: normal;
+    color: var(--section-title-color);
+}
+
+.contact-list__item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: rem(16);
+
+
+    &::before {
+        content: '';
+        width: $contact-icon-size;
+        height: $contact-icon-size;
+        background-color: $color-primary;
+        border-radius: 50%;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        width: calc($contact-icon-size / 2);
+        height: calc($contact-icon-size / 2);
+        top: calc($contact-icon-size / 2);
+        left: calc($contact-icon-size / 2);
+        transform: translate(-50%, -50%);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    &:not(:last-child) {
+        margin-bottom: rem(16);
+    }
+
+    &--address::after {
+        background-image: url('assets/images/sprite.svg#icon-compas');
+    }
+
+    &--phone::after {
+        background-image: url('assets/images/sprite.svg#icon-phone');
+    }
+
+    &--email::after {
+        background-image: url('assets/images/sprite.svg#icon-mail');
+    }
+}
