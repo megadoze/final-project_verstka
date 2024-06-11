@@ -102,6 +102,8 @@ function copy() {
         "src/assets/fonts/*",
         "src/assets/images/!(icons)/**/*",
         "src/assets/images/!(icons)",
+        "src/*.png",
+        "src/favicon.ico",
       ],
       {
         base: "src",
