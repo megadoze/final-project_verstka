@@ -9,6 +9,7 @@ import svgSprite from "gulp-svg-sprite";
 import webpack from "webpack-stream";
 import htmlmin from "gulp-htmlmin";
 import browserSync from "browser-sync";
+import webp from "gulp-webp";
 
 const sass = gulpSass(dartSass);
 
@@ -31,6 +32,7 @@ function watch() {
   );
   gulp.watch(["src/style.scss", "src/styles/**/*"], styles);
   gulp.watch(["src/assets/images/icons/*"], svg);
+  gulp.watch(["src/assets/images/content/*"], towebp);
   gulp.watch(["src/app.js"], scripts);
   gulp.watch(["src/*.html"], html);
 }
@@ -121,7 +123,20 @@ function svg() {
     .pipe(gulp.dest("src/assets/images"));
 }
 
-export { svg };
+function towebp() {
+  return gulp
+    .src("src/assets/images/content/contact/*.jpg", {
+      encoding: "binary",
+    })
+    .pipe(webp())
+    .pipe(
+      gulp.dest("src/assets/images/content/contact/", {
+        encoding: "binary",
+      })
+    );
+}
+
+export { svg, towebp };
 
 export { styles, clean, copy, scripts, html, server, watch };
 
